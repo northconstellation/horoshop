@@ -1,0 +1,8 @@
+.b-formItem__orderButton{
+  @include b-formItem__orderButton($btn-background, $btn-background-to, 196px, 34px, 20px, $btn-color, $border-box-none, $font-weight-bold, 60px);
+}
+
+.b-formItem__orderButton:hover{
+  @include b-formItem__orderButton-hover($btn-background-hover, $btn-background-to-hover);
+}
+

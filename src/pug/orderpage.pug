@@ -1,0 +1,191 @@
+extends layouts/_layout.pug
+block variables
+    -var currentPage='home'
+block main
+    .b-container
+        .b-container__orderBlock
+            .b-orderBlock.content_middle
+                .b-container__title
+                    h3 Оформление заказа
+                .b-container__orderBlanc
+                    .b-orderBlanc
+                        .b-orderBlanc__userinform
+                            .b-userinform
+                                ul.b-blockitem
+                                    - var fitures = ["Tab 1", "Tab 2"]
+                                    each item, index in fitures
+                                        if index == 0
+                                            li.tab-item
+                                                a(href="#" + item.toLowerCase().replace(/\s/ig, '-'), class= item.toLowerCase())
+                                                    span Я новый
+                                                    br
+                                                    | покупатель
+                                        else
+                                            li.tab-item
+                                                a(href="#" + item.toLowerCase().replace(/\s/ig, '-'), class= item.toLowerCase())
+                                                    span Я зарегистрированный покупатель
+                                .tab-contant_container
+                                    each item in fitures
+                                        -var link = item.toLowerCase().replace(/\s/ig, '-')
+                                        div(id=item.toLowerCase().replace(/\s/ig, '-'), class="tab")
+                                            case link
+                                                when "tab-1"
+                                                    .b-blocktext__tabstext
+                                                        .b-tabstext
+                                                            .b-userinform__userstatus
+                                                                .b-userstatus
+                                                            .b-userinform__orderForm
+                                                                .b-orderForm
+                                                                    .b-orderForm__title Получатель заказа
+                                                                    .b-orderForm__form
+                                                                        form.b-form(action="#" method="post")
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Имя и фамилия
+                                                                                            input.b-formItem__input(type="text")
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Телефон
+                                                                                            input.b-formItem__input(type="text")
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Город
+                                                                                            input.b-formItem__input(type="text" placeholder="Введите название своего города")
+                                                                                            .b-hint
+                                                                                                .b-hint__text Например,
+                                                                                                a(href="#", class="b-hint_link")  Киев
+                                                                                                .clearfix
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Эл. почта
+                                                                                            input.b-formItem__input(type="email")
+                                                                                            .b-hint
+                                                                                                .b-hint__text Если вы хотите следить за статусом выполнения заказа
+                                                                                                .clearfix
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            a(href="#", class="b-formItem__link link-addcomment" id="showHideContent") Добавить комментарий к заказу
+                                                                                    .b-form__formItem.hidden-block
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Комментарий
+                                                                                            textarea.b-formItem__textarea(rows="5" cols="45" name="text")
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__titleMain Доставка
+                                                                                            select.b-formItem__selectpost
+                                                                                                option.b-selectpost__option «Новая почта» — 25 грн.
+                                                                                                option.b-selectpost__option «Укрпочта» — 15 грн.
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Адрес склада
+                                                                                            select.b-formItem__selectadress
+                                                                                                option.b-selectadress__option Львов, Отделение №8 (до 30 кг): ул. Гетьмана И. Мазепы, 37
+                                                                                                option.b-selectadress__option Львов, Отделение №9 (до 30 кг): ул. Гетьмана И. Мазепы, 37
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__titleMain Оплата
+                                                                                            select.b-formItem__selectpaid
+                                                                                                option.b-selectpaid__option Належный платеж
+                                                                                                option.b-selectpaid__option Перевод на карту ПБ
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem.btn-center
+                                                                                            input.b-formItem__orderButton(type="submit", value="Оформить заказ")
+                                                when "tab-2"
+                                                    .b-blocktext__tabstext
+                                                        .b-tabstext
+                                                            .b-userinform__userstatus
+                                                                .b-userstatus
+                                                            .b-userinform__orderForm
+                                                                .b-orderForm
+                                                                    .b-orderForm__title Получатель заказа
+                                                                    .b-orderForm__form
+                                                                        form.b-form(action="#" method="post")
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Имя и фамилия
+                                                                                            input.b-formItem__input(type="text")
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Телефон
+                                                                                            input.b-formItem__input(type="text")
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Город
+                                                                                            input.b-formItem__input(type="text" placeholder="Введите название своего города")
+                                                                                            .b-hint
+                                                                                                .b-hint__text Например,
+                                                                                                a(href="#", class="b-hint_link")  Киев
+                                                                                                .clearfix
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Эл. почта
+                                                                                            input.b-formItem__input(type="email")
+                                                                                            .b-hint
+                                                                                                .b-hint__text Если вы хотите следить за статусом выполнения заказа
+                                                                                                .clearfix
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__titleMain Доставка
+                                                                                            select.b-formItem__selectpost
+                                                                                                option.b-selectpost__option «Новая почта» — 25 грн.
+                                                                                                option.b-selectpost__option «Укрпочта» — 15 грн.
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__title Адрес склада
+                                                                                            select.b-formItem__selectadress
+                                                                                                option.b-selectadress__option Львов, Отделение №8 (до 30 кг): ул. Гетьмана И. Мазепы, 37
+                                                                                                option.b-selectadress__option Львов, Отделение №9 (до 30 кг): ул. Гетьмана И. Мазепы, 37
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem
+                                                                                            label.b-formItem__titleMain Оплата
+                                                                                            select.b-formItem__selectpaid
+                                                                                                option.b-selectpaid__option Належный платеж
+                                                                                                option.b-selectpaid__option Перевод на карту ПБ
+                                                                            .b-form__formBlock
+                                                                                .b-formBlock
+                                                                                    .b-form__formItem
+                                                                                        .b-formItem.btn-center
+                                                                                            input.b-formItem__orderButton(type="submit", value="Оформить заказ")
+                        .b-orderBlanc__order
+                            .b-order
+                                .b-order__title Ваш заказ
+                                .b-order__orderList
+                                    .b-orderList
+                                        .b-orderList__orderItem
+                                            .b-orderItem
+                                                img.b-orderItem__img(src="img/camera1.png")
+                                                .b-orderItem__inform
+                                                    .b-inform
+                                                        a.b-inform__title Цифровий фотоапарат Nikon D5100 kit (18-55 VR)
+                                                        .b-inform__detail
+                                                            .b-detail
+                                                                .b-detail__countprice 6 568 грн. × 1 шт.
+                                                                .b-detail__sum 6 568 грн.
+                                                .clearfix
+                                        .b-orderList__orderItem
+                                            .b-orderItem
+                                                img.b-orderItem__img(src="img/mp3player.png")
+                                                .b-orderItem__inform
+                                                    .b-inform
+                                                        a.b-inform__title MP3-плеер Apple iPod Touch 5Gen 32Gb blue
+                                                        .b-inform__detail
+                                                            .b-detail
+                                                                .b-detail__countprice 3 689 грн. × 1 шт.
+                                                                .b-detail__sum 3 689 грн.
+                                                .clearfix
+                                .b-order__orderSum 9 769,15 грн.
+                                .clearfix

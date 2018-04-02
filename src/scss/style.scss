@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+// Variables;
+@import "components/_veriables";
+
+// Fonts
+@import "components/_fonts";
+
+// Mixins
+@import "components/_mixins";
+
+//Button
+@import "components/_button";
+
+//orderpage
+@import "components/_orderpage";
+
+//media
+@import "components/_media";
+body{
+  font-family: $primary-font-family;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  max-width: 100%
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+.b-container {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  background-color: $primary-color-bg;
+}
+.content_middle {
+  max-width: 1230px;
+  padding: 0 35px;
+  margin: 0 auto;
+}

@@ -1,0 +1,52 @@
+
+@media (max-width: 1024px){
+  .b-orderBlanc__order {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .b-orderBlanc__userinform {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 0 5% 0 !important;
+  }
+  .b-userinform__orderForm {
+    padding: 30px 0 !important;
+  }
+  .b-container {
+    height: auto!important;
+    padding: 0 0 30px 0!important;
+  }
+
+}
+
+@media (max-width: 768px){
+  .b-formItem label {
+    display: block!important;
+    width: 100%!important;
+  }
+
+  .b-formItem__input, .b-formItem__textarea {
+    display: block!important;
+    width: 100%!important;
+  }
+  .b-hint {
+    margin: 1% 0 0!important;
+  }
+  .b-formItem__link {
+    margin: 0!important;
+  }
+  .b-formItem .b-formItem__selectpaid, .b-formItem .b-formItem__selectpost {
+    width: 100%!important;
+  }
+  .b-formItem select {
+    padding: 0 25px 0 5px!important;
+  }
+  .b-formItem .b-formItem__selectadress{
+    width: 100%!important;
+  }
+  .b-formBlock {
+    padding: 25px 30px!important;
+  }
+
+}
